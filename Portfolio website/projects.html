@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects - SA Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f2e6ff, #e0c3fc);
+      color: #2d2d2d;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      color: ;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project-tile {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .project-tile:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-tile h2 {
+      color:  #b28cd1;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-tile h2 i {
+      color: #b28cd1;
+    }
+
+    .project-tile p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    .tech-stack {
+      margin-top: 0.8rem;
+      font-style: italic;
+      color:  #b28cd1;
+      font-size: 0.95rem;
+    }
+
+    .github-link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      background:  linear-gradient(to right, #e6a8d7, #a18cd1);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .github-link:hover {
+      background: linear-gradient(to right, #e6a8d7, #a18cd1);
+    }
+
+    .back-btn {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .back-btn a {
+      text-decoration: none;
+      color: white;
+      background:  linear-gradient(to right, #e6a8d7, #a18cd1);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    .back-btn a:hover {
+      background:  linear-gradient(to right, #e6a8d7, #a18cd1);
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Project Dashboard</h1>
+
+  <div class="dashboard">
+    <div class="project-tile">
+      <h2><i class="fas fa-leaf"></i> Smart Agriculture</h2>
+      <p>An AI-powered system that uses machine learning to monitor crop health, predict yield, and optimize irrigation for sustainable farming.</p>
+      <div class="tech-stack">Machine Learning, Python, IoT</div>
+      <a class="github-link" href="https://github.com/santhoshini-18/Smart-agriculture" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="project-tile">
+      <h2><i class="fas fa-heartbeat"></i> Diabetic Prediction System</h2>
+      <p>A predictive model that analyzes health parameters to estimate diabetes risk and support early intervention.</p>
+      <div class="tech-stack">Python, Pandas, Scikit-learn</div>
+      <a class="github-link" href="https://github.com/santhoshini-18/Diabetis-Prediction" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="project-tile">
+      <h2><i class="fas fa-dumbbell"></i> Fitnezz Website</h2>
+      <p>A responsive fitness platform offering workout plans, healthy tips, and interactive user engagement for fitness enthusiasts.</p>
+      <div class="tech-stack">HTML, CSS, JavaScript</div>
+      <a class="github-link" href="https://github.com/santhoshini-18/Workout-Page" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="project-tile">
+      <h2><i class="fas fa-comment-dots"></i> Sentiment Analysis using NLP</h2>
+      <p>Uses Natural Language Processing to analyze reviews or tweets and determine the sentiment as positive, negative, or neutral.</p>
+      <div class="tech-stack">Python, NLP, NLTK, Scikit-learn</div>
+      <a class="github-link" href="https://github.com/santhoshini-18/sentimental-Analysis-1" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="project-tile">
+      <h2><i class="fas fa-chart-line"></i> AI Business Hub</h2>
+      <p>A dashboard application with real-time insights powered by AI, designed for business intelligence and data visualization.</p>
+      <div class="tech-stack">TypeScript, Node.js, Express</div>
+      <a class="github-link" href="https://github.com/santhoshini-18/final-project" target="_blank">View on GitHub</a>
+    </div>
+  </div>
+
+  <div class="back-btn">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+</body>
+</html>

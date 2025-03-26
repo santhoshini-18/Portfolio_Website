@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me - SA Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e6a8d7, #d3cce3);
+      color: #2d2d2d;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+      color: #4b0082;
+    }
+
+    .contact-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .contact-info h2 {
+      font-size: 1.5rem;
+      color: #a18cd1;
+      margin-bottom: 1rem;
+    }
+
+    .info-block {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: #444;
+    }
+
+    .info-block i {
+      color: #4b0082;
+      font-size: 1.2rem;
+    }
+
+    .social-icons {
+      margin-top: 1.5rem;
+    }
+
+    .social-icons a {
+      margin-right: 1rem;
+      font-size: 1.8rem;
+      color: #4b0082;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #a18cd1;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .contact-form h2 {
+      font-size: 1.5rem;
+      color: #a18cd1;
+      margin-bottom: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background: linear-gradient(to right, #a18cd1, #e6a8d7);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: linear-gradient(to right, #e6a8d7, #a18cd1);
+      transform: scale(1.05);
+    }
+
+    .back-btn {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .back-btn a {
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(to right, #a18cd1, #e6a8d7);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    .back-btn a:hover {
+      background: linear-gradient(to right, #e6a8d7, #a18cd1);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+
+    .message-sent {
+      text-align: center;
+      font-size: 1.2rem;
+      color: green;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contact Me</h1>
+
+  <div class="contact-container">
+
+    <div class="contact-info">
+      <h2>Let’s Connect</h2>
+      <div class="info-block"><i class="fas fa-user"></i> I'm a creative web developer passionate about clean design and interactive interfaces.</div>
+      <div class="info-block"><i class="fas fa-envelope"></i> santhoshiniamberkar@gmail.com</div>
+      <div class="info-block"><i class="fas fa-phone"></i> +91 934643834</div>
+      <div class="info-block"><i class="fas fa-map-marker-alt"></i> Your City, India</div>
+
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/santhoshini-amberkar " target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/santhoshini-18" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <form id="contact-form">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <div class="message-sent" id="message-sent"></div>
+    </div>
+
+  </div>
+
+  <div class="back-btn">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("santhoshiniamberkar@gmail.comD"); // Replace with your EmailJS User ID
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const templateParams = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+      };
+
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+          document.getElementById('message-sent').innerText = 'Message Sent Successfully!';
+        }, function(error) {
+          document.getElementById('message-sent').innerText = 'Oops! Something went wrong.';
+        });
+    });
+  </script>
+
+</body>
+</html>
